@@ -1,8 +1,18 @@
-<div class="container">
-    <div class="row store-item">
-      <div class="col-md-1">{{store.id}}</div>
-      <div class="col-md-5">{{store.name}}</div>
-      <div class="col-md-3">{{store.adress}}</div>
-      <div class="col-md-3">{{store.time}}</div>
-    </div>
+<div class="store-item" *ngIf="store">
+  <h2>{{store.name}}</h2>
+  <h3>{{store.adress}}</h3>
+  <h3>{{store.time}}</h3>
+  <div><label>id: </label>{{store.id}}</div>
+  <div>
+    <label>Название: </label>
+    <input [(ngModel)]="store.name" placeholder="name" />
   </div>
+  <div>
+    <label>Адрес: </label>
+    <input [(ngModel)]="store.adress" placeholder="adress" />
+  </div>
+  <div>
+    <label>Режим работы: </label>
+    <input [(ngModel)]="store.time" placeholder="time" />
+  </div>
+</div>

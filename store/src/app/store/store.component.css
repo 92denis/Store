@@ -1,7 +1,6 @@
-.container{
-    width: 600px;
-}
+
 .store-item{
+    padding: 10px;
     border: 1px solid rgba(167, 167, 167, 0.85);
+    margin-bottom: 15px;
 }
- 

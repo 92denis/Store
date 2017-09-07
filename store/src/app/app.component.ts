@@ -24,4 +24,9 @@ export class AppComponent {
       time: '11:00 - 18:00'
     }];
   }
+  selectedStore: Store;
+  
+   onSelect(store: Store): void {
+     this.selectedStore = store;
+   }
 }

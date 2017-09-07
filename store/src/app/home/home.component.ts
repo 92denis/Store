@@ -28,7 +28,10 @@ export class HomeComponent implements OnInit {
   onSelect(store: Store): void {
     this.selectedStore = store;
   }
-
+  addItem(id: number, name: string, address: string, time: string) {
+  id = this.stores[this.stores.length -1].id + 1;
+  this.dataService.addStore(id, name, address, time);
+  }
   edit(): void {
     this.router.navigate(['/edit', this.selectedStore.id]);
   }

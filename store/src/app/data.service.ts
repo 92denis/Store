@@ -6,12 +6,12 @@ export class DataService {
   private stores: Store[] = [{
     id: 1,
     name: 'Windstorm',
-    adress: 'Minsk',
+    address: 'Minsk',
     time: '10:00 - 19:00'
   }, {
     id: 2,
     name: 'Wind',
-    adress: 'Minsk',
+    address: 'Minsk',
     time: '11:00 - 18:00'
   }];
 
@@ -22,6 +22,9 @@ export class DataService {
         break;
       }
     }
+  }
+  addStore(id: number, name: string, address: string, time: string) {
+    this.stores.push(new Store(id, name, address, time));
   }
 
   getStores(): Promise<Store[]> {

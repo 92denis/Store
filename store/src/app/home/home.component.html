@@ -5,7 +5,7 @@
       <span class="badge">{{store.id}}</span> {{store.name}} <br> {{store.adress}}
       <br> {{store.time}}
       <nav>
-        <a routerLink="/edit" >Редактировать</a>
+        <a [routerLink]="['/edit', '1']" >Редактировать</a>
       </nav>
     </li>
   </ul>

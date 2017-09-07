@@ -1,5 +1,7 @@
 import { Store } from '././store/store.component';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class DataService {
   private stores: Store[] = [{
     id: 1,
@@ -13,7 +15,12 @@ export class DataService {
     time: '11:00 - 18:00'
   }];
 
-  getData(): Store[] {
-    return this.stores;
+  getStores(): Promise<Store[]> {
+    return Promise.resolve(this.stores);
+  }
+
+  getStore(id: number): Promise<Store> {
+    return this.getStores()
+    .then(stores => stores.find(store=> store.id === id));
   }
 }

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { DataService } from '././data.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

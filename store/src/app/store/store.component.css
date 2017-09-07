@@ -1,6 +1,8 @@
 
-.store-item{
-    padding: 10px;
-    border: 1px solid rgba(167, 167, 167, 0.85);
+.container{
+    width: 350px;
+    border: 1px solid #607D8B;
+    border-radius: 4px;
     margin-bottom: 15px;
-}
+    padding: 10px;
+  }

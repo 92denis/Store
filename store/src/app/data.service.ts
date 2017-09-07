@@ -15,12 +15,20 @@ export class DataService {
     time: '11:00 - 18:00'
   }];
 
+  update(store: Store) {
+    for (let i = 0; i < this.stores.length; i++) {
+      if (this.stores[i].id === store.id) {
+        this.stores.splice(i, 1, store);
+        break;
+      }
+    }
+  }
+
   getStores(): Promise<Store[]> {
     return Promise.resolve(this.stores);
   }
 
   getStore(id: number): Promise<Store> {
-    return this.getStores()
-    .then(stores => stores.find(store=> store.id === id));
+    return this.getStores().then(stores => stores.find(store => store.id === id));
   }
 }

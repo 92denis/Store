@@ -6,8 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  providers: [DataService]
+  styleUrls: ['./home.component.css']
 })
 
 export class HomeComponent implements OnInit {
@@ -15,7 +14,9 @@ export class HomeComponent implements OnInit {
   stores: Store[];
   selectedStore: Store;
 
-  constructor(private router: Router, private dataService: DataService) { }
+  constructor(private router: Router, private dataService: DataService) {
+
+  }
 
   getStores(): void {
     this.dataService.getStores().then(stores => this.stores = stores);
@@ -31,5 +32,5 @@ export class HomeComponent implements OnInit {
   edit(): void {
     this.router.navigate(['/edit', this.selectedStore.id]);
   }
-  
+
 }

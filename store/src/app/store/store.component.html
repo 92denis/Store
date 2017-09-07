@@ -1,18 +1,21 @@
-<div class="store-item" *ngIf="store">
-  <h2>{{store.name}}</h2>
-  <h3>{{store.adress}}</h3>
-  <h3>{{store.time}}</h3>
-  <div><label>id: </label>{{store.id}}</div>
+<div class="store-item" *ngIf="stores">
+  <h2>{{stores.name}}</h2>
+  <h3>{{stores.adress}}</h3>
+  <h3>{{stores.time}}</h3>
+  <div><label>id: </label>{{stores.id}}</div>
   <div>
     <label>Название: </label>
-    <input [(ngModel)]="store.name" placeholder="name" />
+    <input [(ngModel)]="stores.name" placeholder="name" />
   </div>
   <div>
     <label>Адрес: </label>
-    <input [(ngModel)]="store.adress" placeholder="adress" />
+    <input [(ngModel)]="stores.adress" placeholder="adress" />
   </div>
   <div>
     <label>Режим работы: </label>
-    <input [(ngModel)]="store.time" placeholder="time" />
+    <input [(ngModel)]="stores.time" placeholder="time" />
   </div>
-</div>
+  <nav>
+      <a routerLink="/home">Назад</a>
+  </nav>
+ </div>

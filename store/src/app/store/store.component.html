@@ -3,19 +3,28 @@
     <h2>{{store.name}}</h2>
     <h3>{{store.address}}</h3>
     <h3>{{store.time}}</h3>
-    <div><label>id: </label>{{store.id}}</div>
-    <div>
-      <label>Название: </label>
-      <input [(ngModel)]="store.name" placeholder="name" />
-    </div>
-    <div>
-      <label>Адрес: </label>
-      <input [(ngModel)]="store.address" placeholder="address" />
-    </div>
-    <div>
-      <label>Режим работы: </label>
-      <input [(ngModel)]="store.time" placeholder="time" />
-    </div>
-    <button (click)="goBack()">Back</button>
+      <div class="panel">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <input class="form-control" [(ngModel)]="store.name" placeholder = "Название" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input  class="form-control" [(ngModel)]="store.address" placeholder="Адрес" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input  class="form-control" [(ngModel)]="store.time" placeholder="Режим работы" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    <button class="btn btn-default" (click)="goBack()">Сохранить</button>
+                </div>
+            </div>
+        </div>
   </div>
 </div>

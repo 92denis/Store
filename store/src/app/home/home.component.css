@@ -1,7 +1,8 @@
 .container{
-    width: 350px;
     border: 1px solid #607D8B;
     border-radius: 4px;
+    padding: 15px;
+    margin: 20px auto;
   }
   .selected {
       background-color: #CFD8DC !important;
@@ -11,10 +12,9 @@
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
-      width: 15em;
     }
     .stores li {
-      width: 250px;
+      
       cursor: pointer;
       position: relative;
       left: 0;

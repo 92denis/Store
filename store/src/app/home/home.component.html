@@ -22,17 +22,21 @@
                 </div>
             </div>
         </div>
-  <h2>My Store</h2>
-  <ul class="stores">
-    <li *ngFor="let store of stores" [class.selected]="store === selectedStore" (click)="onSelect(store)">
+  <h2>Магазины</h2>
+  <ul class="stores clearfix">
+    <li class="col-md-2 col-sm-5 col-xs-12" *ngFor="let store of stores" [class.selected]="store === selectedStore" (click)="onSelect(store)">
       <span class="badge">{{store.id}}</span> {{store.name}} <br> {{store.address}}
       <br> {{store.time}}
     </li>
   </ul>
   <div *ngIf="selectedStore">
     <h2>
-      {{selectedStore.name}} is my store
+     Для редактирования выбран магазин: {{selectedStore.name}}
     </h2>
-    <button (click)="edit()">Редактировать</button>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-8">
+            <button class="btn btn-default" (click)="edit()">Редактировать</button>
+        </div>
+    </div>
   </div>
 </div>

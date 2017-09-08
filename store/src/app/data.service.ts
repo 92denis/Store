@@ -43,7 +43,10 @@ export class DataService {
   getStores(): Promise<Store[]> {
     return Promise.resolve(this.stores);
   }
-  
+  getProductsByStoreId(storeId: number): Product[] {
+    return this.products.filter(product => product.storeId === storeId);
+  }
+
   getProducts(): Promise<Product[]> {
     return Promise.resolve(this.products);
   }

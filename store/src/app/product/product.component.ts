@@ -24,9 +24,7 @@ export class ProductComponent implements OnInit {
   }
 
   addItem(storeId: number, id: number, name: string, price: number, count: number) {
-    storeId = this.storeId;
     id = this.products[this.products.length - 1].id + 1;
     this.dataService.addProduct(storeId, id, name, price, count);
-    console.log(this.products);
   }
 }

@@ -1,37 +1,39 @@
 <div class="container">
-  <div *ngIf="store">
-    <h2>{{store.name}}</h2>
-    <h3>{{store.address}}</h3>
-    <h3>{{store.time}}</h3>
-      <div class="panel">
-        <div class="form-inline">
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input class="form-control" [(ngModel)]="store.name" placeholder = "Название" />
+    <div *ngIf="store">
+        <h2>{{store.name}}</h2>
+        <h3>{{store.address}}</h3>
+        <h3>{{store.time}}</h3>
+        <div class="panel">
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input class="form-control" [(ngModel)]="store.name" placeholder="Название" />
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input  class="form-control" [(ngModel)]="store.address" placeholder="Адрес" />
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input class="form-control" [(ngModel)]="store.address" placeholder="Адрес" />
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input  class="form-control" [(ngModel)]="store.time" placeholder="Режим работы" />
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input class="form-control" [(ngModel)]="store.time" placeholder="Режим работы" />
+                    </div>
                 </div>
-            </div>
-            
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
-                    <button class="btn btn-default" (click)="saveStore()">Сохранить</button>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <button class="btn btn-default" (click)="saveStore()">Сохранить</button>
+                    </div>
                 </div>
             </div>
         </div>
-  </div>
-  <app-product [storeId]="store.id"></app-product>
-  <div class="form-group">
-      <div class="col-md-offset-10 col-md-8">
-          <button class="btn btn-default" (click)="goBack()">Назад</button>
-      </div>
-  </div>
+        <app-product [storeId]="store.id"></app-product>
+        <div class="form-group">
+            <div class="col-md-offset-10 col-md-8">
+                <button class="btn btn-default" (click)="goBack()">Назад</button>
+            </div>
+        </div>
+    </div>
+
 </div>

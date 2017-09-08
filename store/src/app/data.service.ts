@@ -43,7 +43,7 @@ export class DataService {
   getStores(): Promise<Store[]> {
     return Promise.resolve(this.stores);
   }
-
+  
   getProducts(): Promise<Product[]> {
     return Promise.resolve(this.products);
   }

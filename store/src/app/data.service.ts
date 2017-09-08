@@ -1,4 +1,4 @@
-import {Store} from './store';
+import { Store } from './store';
 import { Product } from './product';
 import { Injectable } from '@angular/core';
 
@@ -17,14 +17,15 @@ export class DataService {
   }];
 
   private products: Product[] = [{
+    storeId: 1,
     id: 1,
     name: 'Стол',
     price: 125,
     count: 23
   }];
 
-  addProduct(id: number, name: string, price: number, count: number) {
-    this.products.push(new Product(id, name, price, count));
+  addProduct(storeId: number, id: number, name: string, price: number, count: number) {
+    this.products.push(new Product(storeId, id, name, price, count));
   }
 
   update(store: Store) {

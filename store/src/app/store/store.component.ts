@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import {Store} from '../store';
+import { Store } from '../store';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -25,11 +25,11 @@ export class StoreComponent implements OnInit {
       .subscribe(store => this.store = store);
   }
 
-  saveStore():void{
+  saveStore(): void {
     this.dataService.update(this.store);
   }
-  
+
   goBack(): void {
-        this.location.back();
+    this.location.back();
   }
 }

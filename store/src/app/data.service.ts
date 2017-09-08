@@ -50,6 +50,10 @@ export class DataService {
   getStores(): Promise<Store[]> {
     return Promise.resolve(this.stores);
   }
+
+  getStore(id: number): Promise<Store> {
+    return this.getStores().then(stores => stores.find(store => store.id === id));
+  }
   getProductsByStoreId(storeId: number): Product[] {
     return this.products.filter(product => product.storeId === storeId);
   }
@@ -65,7 +69,8 @@ export class DataService {
   getProducts(): Promise<Product[]> {
     return Promise.resolve(this.products);
   }
-  getStore(id: number): Promise<Store> {
-    return this.getStores().then(stores => stores.find(store => store.id === id));
+  getProduct(id: number): Promise<Product> {
+    return this.getProducts().then(products => products.find(product => product.id === id));
   }
+  
 }

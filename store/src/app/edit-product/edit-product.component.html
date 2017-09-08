@@ -1,0 +1,58 @@
+<div class="container">
+  <div *ngIf="product">
+    <div class="panel panel-default">
+      <div class="panel-heading">Редактирование магазина</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Название</th>
+                  <th>Цена, руб.</th>
+                  <th>Количество на складе</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{{product.id}}</th>
+                  <td>{{product.name}}</td>
+                  <td>{{product.price}}</td>
+                  <td>{{product.count}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-inline clearfix">
+            <div class="form-group">
+              <div class="col-md-6">
+                <input class="form-control" [(ngModel)]="product.name" placeholder="Название" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6">
+                <input class="form-control" [(ngModel)]="product.price" placeholder="Цена" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6">
+                <input class="form-control" [(ngModel)]="product.count" placeholder="Количество на складе" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="form-group">
+        <div class=" col-md-2">
+          <button class="btn btn-default" (click)="goBack()">Назад</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

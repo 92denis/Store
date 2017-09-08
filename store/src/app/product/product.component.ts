@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 import { Store } from '../store';
 import { Product } from '../product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,7 @@ export class ProductComponent implements OnInit {
   products: Product[];
   @Input() storeId: number;
 
-  constructor(private dataService: DataService) { }
+  constructor(private router: Router, private dataService: DataService) { }
 
   getProducts(): void {
     this.products = this.dataService.getProductsByStoreId(this.storeId);
@@ -32,5 +33,8 @@ export class ProductComponent implements OnInit {
   delProduct(product: Product) {
     this.dataService.deleteProduct(product);
     this.products = this.dataService.getProductsByStoreId(this.storeId);
+  }
+  editProduct(id: number): void {
+    this.router.navigate(['/edit-product', id]);
   }
 }

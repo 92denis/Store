@@ -38,11 +38,28 @@ export class DataService {
     this.stores.push(new Store(id, name, address, time));
   }
 
+  deleteStore(store: Store) {
+    for (let i = 0; i < this.stores.length; i++) {
+      if (this.stores[i].id === store.id) {
+        this.stores.splice(i, 1);
+        break;
+      }
+    }
+  }
+
   getStores(): Promise<Store[]> {
     return Promise.resolve(this.stores);
   }
   getProductsByStoreId(storeId: number): Product[] {
     return this.products.filter(product => product.storeId === storeId);
+  }
+  deleteProduct(product: Product) {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === product.id) {
+        this.products.splice(i, 1);
+        break;
+      }
+    }
   }
 
   getProducts(): Promise<Product[]> {

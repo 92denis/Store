@@ -11,46 +11,26 @@ input.ng-touched.ng-valid {border:solid green 2px;}
 background-color: #CFD8DC !important;
 color: white;
  }
-   
-.stores li.selected:hover {
- background-color: #BBD8DC !important;
- color: white;
-}
-.stores li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.stores .text {
-  position: absolute;
-  top: -3px;
-}
-.stores .badge {
+
+ div.panel-heading{
+   position: relative;
+   text-align: center;
+   border-radius: 4px 0 0 4px;
+  
+ }
+.badge {
   display: block;
   font-size: small;
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
   background-color: #607D8B;
   position: absolute;
-  margin-right: 15px;
   border-radius: 4px 0 0 4px;
-  height: 100%;
   top: 0px;
+  left: 0px;
   float: left;
+  height: 100%;
 }
-.stores {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-}
-.stores li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  border-radius: 4px;
-  display: inline-block;
- text-align:center;
-}
+ button{
+   margin-right: 10px;
+   margin-bottom: 10px;
+ }

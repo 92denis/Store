@@ -25,15 +25,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getStores();
   }
-  onSelect(store: Store): void {
-    this.selectedStore = store;
-  }
+ 
   addItem(id: number, name: string, address: string, time: string) {
-  id = this.stores[this.stores.length -1].id + 1;
+  id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
   this.dataService.addStore(id, name, address, time);
   }
-  edit(): void {
-    this.router.navigate(['/edit', this.selectedStore.id]);
+  delStore(store: Store){
+      this.dataService.deleteStore(store);
+  }
+  edit(id: number): void {
+    this.router.navigate(['/edit', id]);
   }
 
 }

@@ -29,4 +29,8 @@ export class ProductComponent implements OnInit {
     this.dataService.addProduct(storeId, id, name, price, count);
     this.products = this.dataService.getProductsByStoreId(this.storeId);
   }
+  delProduct(product: Product) {
+    this.dataService.deleteProduct(product);
+    this.products = this.dataService.getProductsByStoreId(this.storeId);
+  }
 }

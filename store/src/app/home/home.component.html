@@ -1,10 +1,10 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-            <form class="form-inline" (ngSubmit)="addItem(id, name, address, time); storeForm.reset()" #storeForm ="ngForm">
+            <form class="form-inline" (ngSubmit)="addItem(id, name, address, time); storeForm.reset()" #storeForm="ngForm">
                 <div class="form-group">
                     <div class="col-md-8">
-                        <input class="form-control" name = "name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required/>
+                        <input class="form-control" name="name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-8">
                         <button title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid " class="btn btn-default"
-                           type="submit">Добавить</button>
+                            type="submit">Добавить</button>
                     </div>
                 </div>
             </form>
@@ -28,21 +28,17 @@
         <div class="row">
             <h2>Магазины</h2>
         </div>
-        <ul class="stores clearfix">
-            <li class="col-md-2 col-sm-5 col-xs-12" *ngFor="let store of stores" [class.selected]="store === selectedStore" (click)="onSelect(store)">
-                <span class="badge">{{store.id}}</span> {{store.name}} <br> {{store.address}}
-                <br> {{store.time}}
-            </li>
-        </ul>
-        <div *ngIf="selectedStore">
-            <h2>
-                Для редактирования выбран магазин: {{selectedStore.name}}
-            </h2>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
-                    <button class="btn btn-default" (click)="edit()">Редактировать</button>
-                </div>
+
+        <div class="panel panel-default" *ngFor="let store of stores" >
+            <div class="panel-heading"><span class="badge">{{store.id}}</span>{{store.name}} </div>
+            <div  class="panel-body">
+                {{store.address}}
+                <hr> {{store.time}}
+                <hr>
+                <button class="btn btn-default col-md-3 col-sm-4 col-xs-12" (click)="edit(store.id)">Редактировать</button>
+                <button (click)="delStore(store)" class="btn btn-default col-md-3 col-sm-4 col-xs-12">Удалить</button>
             </div>
         </div>
+        
     </div>
 </div>

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="panel">
+    <h2>Товары</h2>
+    <table class="table table-bordered clearfix">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Название</th>
+          <th>Цена, руб.</th>
+          <th>Количество на складе</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.count}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <div class="form-inline">
+      <div class="form-group">
+        <div class="col-md-8">
+          <input class="form-control" [(ngModel)]="name" placeholder="Название" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-6">
+          <input class="form-control" [(ngModel)]="price" placeholder="Цена" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-6">
+          <input class="form-control" [(ngModel)]="count" placeholder="Количество" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-8">
+          <button class="btn btn-default" (click)="addItem(id,name, price, count)">Добавить</button>
+        </div>
+      </div>
+    </div>

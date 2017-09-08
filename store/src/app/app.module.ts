@@ -6,6 +6,7 @@ import { StoreComponent } from './store/store.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DataService } from '././data.service';
+import { ProductComponent } from './product/product.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     StoreComponent,
-    HomeComponent
+    HomeComponent,
+    ProductComponent
   ],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule,

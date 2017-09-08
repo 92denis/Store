@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '../store/store.component'
+import {Store} from '../store';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 

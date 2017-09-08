@@ -3,14 +3,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
+import {Store} from '../store';
 import 'rxjs/add/operator/switchMap';
-
-export class Store {
-  constructor(public id: number,
-              public name: string,
-              public address: string,
-              public time: string) { }
-}
 
 @Component({
   selector: 'app-store',

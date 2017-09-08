@@ -25,10 +25,6 @@ export class StoreComponent implements OnInit {
       .subscribe(store => this.store = store);
   }
 
-  saveStore(): void {
-    this.dataService.update(this.store);
-  }
-
   goBack(): void {
     this.location.back();
   }

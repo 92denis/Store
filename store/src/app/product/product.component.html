@@ -1,47 +1,59 @@
 <div class="container">
-  <div class="panel">
-    <h2>Товары</h2>
-    <table class="table table-bordered clearfix">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Название</th>
-          <th>Цена, руб.</th>
-          <th>Количество на складе</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of products">
-          <th scope="row">{{product.id}}</th>
-          <td>{{product.name}}</td>
-          <td>{{product.price}}</td>
-          <td>{{product.count}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-    <div class="form-inline">
-      <div class="form-group">
-        <div class="col-md-8">
-          <input class="form-control" name="name" [(ngModel)]="name" placeholder="Название" #nameProduct="ngModel" required />
+  <div class="panel panel-default">
+    <div class="panel-heading">Товары</div>
+    <div class="panel-body">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Название</th>
+                <th>Цена, руб.</th>
+                <th>Количество на складе</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.count}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-md-6">
-          <input class="form-control" name="price" [(ngModel)]="price" placeholder="Цена" #priceProduct="ngModel" title ="Введите числовое значение" required pattern="[0-9]{1,18}"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-6">
-          <input class="form-control" name="count" [(ngModel)]="count" placeholder="Количество" #countProduct="ngModel" title ="Введите числовое значение" required pattern="[0-9]{1,10}"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-offset-2 col-md-8">
-          <button title ="Заполните все поля" [disabled]="nameProduct.invalid || countProduct.invalid  || priceProduct.invalid " class="btn btn-default" (click)="addItem(idStore,id,name, price, count)">Добавить</button>
-        </div>
+      <hr class="clearfix">
+      <div class="row">
+        <form class="form-inline" (ngSubmit)="addItem(idStore,id,name, price, count); productForm.reset() " #productForm="ngForm">
+          <div class="form-group">
+            <div class="col-md-8">
+              <input class="form-control" name="name" [(ngModel)]="name" placeholder="Название" #nameProduct="ngModel" title="Введите сторку"
+                required />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6">
+              <input class="form-control" name="price" [(ngModel)]="price" placeholder="Цена" #priceProduct="ngModel" title="Введите числовое значение, от 1 до 18 цифр"
+                required pattern="[0-9]{1,18}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6">
+              <input class="form-control" name="count" [(ngModel)]="count" placeholder="Количество" #countProduct="ngModel" title="Введите числовое значение, от 1 до 10 цифр"
+                required pattern="[0-9]{1,10}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+              <button title="Заполните все поля" [disabled]="nameProduct.invalid || countProduct.invalid  || priceProduct.invalid " class="btn btn-default"
+                type="submit">Добавить товар</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

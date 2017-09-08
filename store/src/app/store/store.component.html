@@ -1,37 +1,45 @@
 <div class="container">
     <div *ngIf="store">
-        <h2>{{store.name}}</h2>
-        <h3>{{store.address}}</h3>
-        <h3>{{store.time}}</h3>
-        <div class="panel">
-            <div class="form-inline">
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input class="form-control" [(ngModel)]="store.name" placeholder="Название" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input class="form-control" [(ngModel)]="store.address" placeholder="Адрес" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input class="form-control" [(ngModel)]="store.time" placeholder="Режим работы" />
-                    </div>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Редактирование магазина</div>
+            <div class="panel-body">
+                <div class="row">
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-8">
-                        <button class="btn btn-default" (click)="saveStore()">Сохранить</button>
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                        <h2>Название магазина: {{store.name}}</h2>
+                        <h3>Адрес: {{store.address}}</h3>
+                        <h3>Режим рабботы: {{store.time}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-inline clearfix">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" [(ngModel)]="store.name" placeholder="Название" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" [(ngModel)]="store.address" placeholder="Адрес" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" [(ngModel)]="store.time" placeholder="Режим работы" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <app-product [storeId]="store.id"></app-product>
-        <div class="form-group">
-            <div class="col-md-offset-10 col-md-8">
-                <button class="btn btn-default" (click)="goBack()">Назад</button>
+        <div class="row clearfix">
+            <app-product [storeId]="store.id"></app-product>
+        </div>
+        <div class="row clearfix">
+            <div class="form-group">
+                <div class=" col-md-2">
+                    <button class="btn btn-default" (click)="goBack()">Назад</button>
+                </div>
             </div>
         </div>
     </div>

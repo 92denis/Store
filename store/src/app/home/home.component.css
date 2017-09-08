@@ -1,32 +1,17 @@
 input.ng-touched.ng-invalid {border:solid red 2px;}
 input.ng-touched.ng-valid {border:solid green 2px;}
 
-.container{
+ .container{
     border: 1px solid #607D8B;
     border-radius: 4px;
     padding: 15px;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 .selected {
-      background-color: #CFD8DC !important;
-      color: white;
-    }
-    .stores {
-      margin: 0 0 2em 0;
-      list-style-type: none;
-      padding: 0;
-    }
-    .stores li {
-      cursor: pointer;
-      position: relative;
-      left: 0;
-      background-color: #EEE;
-      margin: .5em;
-      padding: .3em 0;
-      border-radius: 4px;
-      display: inline-block;
-     text-align:center;
-    }
+background-color: #CFD8DC !important;
+color: white;
+ }
+   
 .stores li.selected:hover {
  background-color: #BBD8DC !important;
  color: white;
@@ -52,4 +37,20 @@ input.ng-touched.ng-valid {border:solid green 2px;}
   height: 100%;
   top: 0px;
   float: left;
+}
+.stores {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+.stores li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  border-radius: 4px;
+  display: inline-block;
+ text-align:center;
 }

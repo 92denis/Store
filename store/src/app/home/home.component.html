@@ -1,42 +1,48 @@
 <div class="container">
     <div class="panel">
-        <div class="form-inline">
-            <div class="form-group">
-                <div class="col-md-8">
-                    <input class="form-control" [(ngModel)]="name" placeholder = "Название"   #nameStore="ngModel" required/>
+        <div class="row">
+            <form class="form-inline" (ngSubmit)="addItem(id, name, address, time); storeForm.reset()" #storeForm ="ngForm">
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <input class="form-control" name = "name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required/>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input  class="form-control" [(ngModel)]="address" placeholder="Адрес"  #addressStore="ngModel" required />
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input class="form-control" name="address" [(ngModel)]="address" placeholder="Адрес" #addressStore="ngModel" required />
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input  class="form-control" [(ngModel)]="time"  placeholder="Режим работы"  #timeStore="ngModel" required />
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input class="form-control" name="time" [(ngModel)]="time" placeholder="Режим работы" #timeStore="ngModel" required />
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <button title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid " class="btn btn-default"
+                           type="submit">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <h2>Магазины</h2>
+        </div>
+        <ul class="stores clearfix">
+            <li class="col-md-2 col-sm-5 col-xs-12" *ngFor="let store of stores" [class.selected]="store === selectedStore" (click)="onSelect(store)">
+                <span class="badge">{{store.id}}</span> {{store.name}} <br> {{store.address}}
+                <br> {{store.time}}
+            </li>
+        </ul>
+        <div *ngIf="selectedStore">
+            <h2>
+                Для редактирования выбран магазин: {{selectedStore.name}}
+            </h2>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-8">
-                    <button title ="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid " class="btn btn-default" (click)="addItem(id, name, address, time)">Добавить</button>
+                    <button class="btn btn-default" (click)="edit()">Редактировать</button>
                 </div>
             </div>
         </div>
-  <h2>Магазины</h2>
-  <ul class="stores clearfix">
-    <li class="col-md-2 col-sm-5 col-xs-12" *ngFor="let store of stores" [class.selected]="store === selectedStore" (click)="onSelect(store)">
-      <span class="badge">{{store.id}}</span> {{store.name}} <br> {{store.address}}
-      <br> {{store.time}}
-    </li>
-  </ul>
-  <div *ngIf="selectedStore">
-    <h2>
-     Для редактирования выбран магазин: {{selectedStore.name}}
-    </h2>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-8">
-            <button class="btn btn-default" (click)="edit()">Редактировать</button>
-        </div>
     </div>
-  </div>
 </div>

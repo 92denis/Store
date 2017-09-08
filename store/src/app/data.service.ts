@@ -22,20 +22,18 @@ export class DataService {
     name: 'Стол',
     price: 125,
     count: 23
+  }, {
+    storeId: 2,
+    id: 1,
+    name: 'Стул',
+    price: 342,
+    count: 54
   }];
 
   addProduct(storeId: number, id: number, name: string, price: number, count: number) {
     this.products.push(new Product(storeId, id, name, price, count));
   }
 
-  update(store: Store) {
-    for (let i = 0; i < this.stores.length; i++) {
-      if (this.stores[i].id === store.id) {
-        this.stores.splice(i, 1, store);
-        break;
-      }
-    }
-  }
   addStore(id: number, name: string, address: string, time: string) {
     this.stores.push(new Store(id, name, address, time));
   }

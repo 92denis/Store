@@ -36,5 +36,8 @@ export class HomeComponent implements OnInit {
   edit(id: number): void {
     this.router.navigate(['/edit', id]);
   }
+  showProduct(id: number): void {
+    this.router.navigate(['/product', id]);
+  }
 
 }

@@ -26,19 +26,21 @@
             </form>
         </div>
         <div class="row">
-            <h2>Магазины</h2>
+            <div class="col-md-8">
+                <h2>Магазины</h2>
+            </div>
         </div>
-
-        <div class="panel panel-default" *ngFor="let store of stores" >
+        <div class="panel panel-default" *ngFor="let store of stores">
             <div class="panel-heading"><span class="badge">{{store.id}}</span>{{store.name}} </div>
-            <div  class="panel-body">
-                {{store.address}}
-                <hr> {{store.time}}
+            <div class="panel-body">
+                <p>Адрес: {{store.address}}</p>
+                <hr>
+                <p> Режим работы: {{store.time}}</p>
                 <hr>
                 <button class="btn btn-default col-md-3 col-sm-4 col-xs-12" (click)="edit(store.id)">Редактировать</button>
                 <button (click)="delStore(store)" class="btn btn-default col-md-3 col-sm-4 col-xs-12">Удалить</button>
+                <button (click)="showProduct(store.id)" class="btn btn-default col-md-3 col-sm-4 col-xs-12">Товары</button>
             </div>
         </div>
-        
     </div>
 </div>

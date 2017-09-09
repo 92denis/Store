@@ -3,6 +3,10 @@ import { DataService } from '../data.service';
 import { Store } from '../store';
 import { Product } from '../product';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-product',
@@ -11,10 +15,14 @@ import { Router } from '@angular/router';
 })
 
 export class ProductComponent implements OnInit {
+  stores: Store[];
   products: Product[];
-  @Input() storeId: number;
+  @Input() product: Product;
+  storeId: number;
 
-  constructor(private router: Router, private dataService: DataService) { }
+  constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute, private location: Location) {
+    this.storeId = parseInt(this.route.snapshot.params['id']);
+  }
 
   getProducts(): void {
     this.products = this.dataService.getProductsByStoreId(this.storeId);
@@ -22,6 +30,10 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+    console.log(this.storeId);
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.dataService.getProduct(+params.get('id')))
+      .subscribe(product => this.product = product);
   }
 
   addItem(storeId: number, id: number, name: string, price: number, count: number) {
@@ -36,5 +48,8 @@ export class ProductComponent implements OnInit {
   }
   editProduct(id: number): void {
     this.router.navigate(['/edit-product', id]);
+  }
+  goBack(): void {
+    this.location.back();
   }
 }

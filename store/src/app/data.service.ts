@@ -57,6 +57,7 @@ export class DataService {
   getProductsByStoreId(storeId: number): Product[] {
     return this.products.filter(product => product.storeId === storeId);
   }
+  
   deleteProduct(product: Product) {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === product.id) {

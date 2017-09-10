@@ -10,11 +10,11 @@ import { ProductComponent } from './product/product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'edit/:id', component: StoreComponent },
   { path: 'edit-product/:id', component: EditProductComponent },
   { path: 'product/:id', component: ProductComponent }
-];
+ ];
 
 @NgModule({
   declarations: [

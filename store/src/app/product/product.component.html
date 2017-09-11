@@ -32,7 +32,7 @@
       </div>
       <hr class="clearfix">
       <div class="row">
-        <form class="form-inline" (ngSubmit)="addItem(idStore,id,name, price, count); productForm.reset() " #productForm="ngForm">
+        <form class="form-inline" (ngSubmit)="addItem(storeId,id,name, price, count); productForm.reset() " #productForm="ngForm">
           <div class="form-group">
             <div class="col-md-8">
               <input class="form-control" name="name" [(ngModel)]="name" placeholder="Название" #nameProduct="ngModel" title="Введите сторку"

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from '../store';
+import { Store } from '../store';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-
+  id: number;
+  name: string;
+  address: string;
+  time: string;
   stores: Store[];
   selectedStore: Store;
 
@@ -25,13 +28,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getStores();
   }
- 
+
   addItem(id: number, name: string, address: string, time: string) {
-  id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
-  this.dataService.addStore(id, name, address, time);
+    id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
+    this.dataService.addStore(id, name, address, time);
   }
-  delStore(store: Store){
-      this.dataService.deleteStore(store);
+  delStore(store: Store) {
+    this.dataService.deleteStore(store);
   }
   edit(id: number): void {
     this.router.navigate(['/edit', id]);

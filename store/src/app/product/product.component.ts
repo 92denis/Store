@@ -19,6 +19,10 @@ export class ProductComponent implements OnInit {
   products: Product[];
   @Input() product: Product;
   storeId: number;
+  id: number;
+  name: string;
+  price: number;
+  count: number;
 
   constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute, private location: Location) {
     this.storeId = parseInt(this.route.snapshot.params['id']);

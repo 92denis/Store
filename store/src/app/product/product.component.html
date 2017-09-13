@@ -22,8 +22,8 @@
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
                 <td>{{product.count}}</td>
-                <td><button class="btn" (click)="editProduct(product.id)">Редактировать</button>
-                  <button class="btn" (click)="delProduct(product)">Удалить</button>
+                <td><button md-raised-button color="primary" (click)="editProduct(product.id)">Редактировать</button>
+                  <button md-raised-button color="primary" (click)="delProduct(product)">Удалить</button>
                 </td>
               </tr>
             </tbody>
@@ -53,8 +53,7 @@
           </div>
           <div class="form-group">
             <div class="col-md-offset-2 col-md-8">
-              <button title="Заполните все поля" [disabled]="nameProduct.invalid || countProduct.invalid  || priceProduct.invalid " class="btn btn-default"
-                type="submit">Добавить товар</button>
+              <button md-raised-button color="primary" title="Заполните все поля" [disabled]="nameProduct.invalid || countProduct.invalid  || priceProduct.invalid "  type="submit">Добавить товар</button>
             </div>
           </div>
         </form>
@@ -62,7 +61,7 @@
       <div class="row clearfix">
         <div class="form-group">
           <div class=" col-md-2">
-            <button class="btn btn-default" (click)="goBack()">Назад</button>
+            <button md-raised-button color="primary" (click)="goBack()">Назад</button>
           </div>
         </div>
       </div>

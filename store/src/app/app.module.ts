@@ -9,7 +9,7 @@ import { DataService } from '././data.service';
 import { ProductComponent } from './product/product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule} from '@angular/material';
+import { MdToolbarModule,MdButtonModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,7 +30,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdButtonModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

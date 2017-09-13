@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-8">
-                        <button title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid " class="btn btn-default"
+                        <button md-raised-button color="primary" title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid "
                             type="submit">Добавить</button>
                     </div>
                 </div>
@@ -37,9 +37,9 @@
                 <hr>
                 <p> Режим работы: {{store.time}}</p>
                 <hr>
-                <button class="btn btn-default col-md-3 col-sm-4 col-xs-12" (click)="edit(store.id)">Редактировать</button>
-                <button (click)="delStore(store)" class="btn btn-default col-md-3 col-sm-4 col-xs-12">Удалить</button>
-                <button (click)="showProduct(store.id)" class="btn btn-default col-md-3 col-sm-4 col-xs-12">Товары</button>
+                <button md-raised-button color="primary" class=" col-md-3 col-sm-4 col-xs-12" (click)="edit(store.id)">Редактировать</button>
+                <button md-raised-button color="primary" (click)="delStore(store)" class="col-md-3 col-sm-4 col-xs-12">Удалить</button>
+                <button md-raised-button color="primary" (click)="showProduct(store.id)" class="col-md-3 col-sm-4 col-xs-12">Товары</button>
             </div>
         </div>
     </div>

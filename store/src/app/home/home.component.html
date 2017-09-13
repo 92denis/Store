@@ -1,27 +1,29 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-            <form class="form-inline" (ngSubmit)="addItem(id, name, address, time); storeForm.reset()" #storeForm="ngForm">
-                <div class="form-group">
-                    <div class="col-md-8">
-                        <input class="form-control" name="name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input class="form-control" name="address" [(ngModel)]="address" placeholder="Адрес" #addressStore="ngModel" required />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input class="form-control" name="time" [(ngModel)]="time" placeholder="Режим работы" #timeStore="ngModel" required />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-8">
-                        <button md-raised-button color="primary" title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid "
-                            type="submit">Добавить</button>
-                    </div>
+            <form class="example-form" (ngSubmit)="addItem(id, name, address, time); storeForm.reset()" #storeForm="ngForm">
+                <md-form-field class=" col-md-4 col-sm-4 col-xs-9">
+                    <input mdInput name="name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required>
+                    <md-error>
+                        Название <strong>обязательное</strong> для заполнения
+                    </md-error>
+                </md-form-field>
+
+                <md-form-field class="col-md-4 col-sm-4 col-xs-9">
+                    <input mdInput name="address" [(ngModel)]="address" placeholder="Адрес" #addressStore="ngModel" required>
+                    <md-error>
+                        Адрес <strong>обязателен</strong> для заполнения
+                    </md-error>
+                </md-form-field>
+                <md-form-field class="col-md-4 col-sm-4 col-xs-9">
+                    <input mdInput name="time" [(ngModel)]="time" placeholder="Режим работы" #timeStore="ngModel" required>
+                    <md-error>
+                        Режим работы <strong>обязателен</strong> для заполнения
+                    </md-error>
+                </md-form-field>
+                <div>
+                    <button class=" col-md-3 col-sm-4 col-xs-12 " md-raised-button color="primary" title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid "
+                        type="submit">Добавить</button>
                 </div>
             </form>
         </div>
@@ -37,9 +39,9 @@
                 <hr>
                 <p> Режим работы: {{store.time}}</p>
                 <hr>
-                <button md-raised-button color="primary" class=" col-md-3 col-sm-4 col-xs-12" (click)="edit(store.id)">Редактировать</button>
-                <button md-raised-button color="primary" (click)="delStore(store)" class="col-md-3 col-sm-4 col-xs-12">Удалить</button>
-                <button md-raised-button color="primary" (click)="showProduct(store.id)" class="col-md-3 col-sm-4 col-xs-12">Товары</button>
+                <button md-raised-button color="primary" class=" col-md-4 col-sm-4 col-xs-12" (click)="edit(store.id)">Редактировать</button>
+                <button md-raised-button color="primary" (click)="delStore(store)" class="col-md-3 col-sm-3 col-xs-12">Удалить</button>
+                <button md-raised-button color="primary" (click)="showProduct(store.id)" class="col-md-4 col-sm-4 col-xs-12">Товары</button>
             </div>
         </div>
     </div>

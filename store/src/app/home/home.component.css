@@ -3,6 +3,25 @@
   width: 100%;
   padding: 15px;
 }
+.right-menu{
+    flex: 1 1 auto;
+}
+
+.mat-card-actions, .mat-card-content, .mat-card-subtitle, .mat-card-title {
+  display: block;
+  margin-bottom: 5px;
+}
+.example-card {
+  width: 45%;
+  display: block;
+  margin: 10px 10px;
+  float: left;
+  }
+
+/* .example-header-image {
+   background-image: url('../../../assets/img/examples/shiba1.jpg');
+  background-size: cover;
+} */
 
  .container{
     border: 1px solid #607D8B;

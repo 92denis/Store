@@ -32,7 +32,40 @@
                 <h2>Магазины</h2>
             </div>
         </div>
-        <div class="panel panel-default" *ngFor="let store of stores">
+        <div *ngFor="let store of stores">
+            <md-card class="example-card clearfix">
+                <md-card-header>
+                    <md-card-title>{{store.name}}
+                    </md-card-title>
+                    <md-card-subtitle>{{store.address}}</md-card-subtitle>
+                    <span class="right-menu"></span>
+                    <button md-button [mdMenuTriggerFor]="menu">
+                            <md-icon>Меню</md-icon>
+                    </button>
+                    <md-menu #menu="mdMenu">
+                        <button md-menu-item (click)="edit(store.id)">
+                               <span>Редактировать</span>
+                        </button>
+                        <button md-menu-item (click)="delStore(store)">
+                              <span>Удалить</span>
+                        </button>
+                    </md-menu>
+                    <hr>
+                </md-card-header>
+                <!-- <img md-card-image src="assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                <md-card-content>
+                    <p>
+                        Режим работы: {{store.time}}
+                    </p>
+                </md-card-content>
+                <md-card-actions>
+                    <button md-button color="primary" (click)="showProduct(store.id)" class="col-md-4 col-sm-4 col-xs-12">Товары</button>
+                </md-card-actions>
+            </md-card>
+        </div>
+
+
+        <!-- <div class="panel panel-default" *ngFor="let store of stores">
             <div class="panel-heading"><span class="badge">{{store.id}}</span>{{store.name}} </div>
             <div class="panel-body">
                 <p>Адрес: {{store.address}}</p>
@@ -43,6 +76,6 @@
                 <button md-raised-button color="primary" (click)="delStore(store)" class="col-md-3 col-sm-3 col-xs-12">Удалить</button>
                 <button md-raised-button color="primary" (click)="showProduct(store.id)" class="col-md-4 col-sm-4 col-xs-12">Товары</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

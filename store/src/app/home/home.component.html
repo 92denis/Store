@@ -21,11 +21,12 @@
                         Режим работы <strong>обязателен</strong> для заполнения
                     </md-error>
                 </md-form-field>
-                <div>
-                    <button class=" col-md-3 col-sm-4 col-xs-12 " md-raised-button color="primary" title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid "
-                        type="submit">Добавить</button>
-                </div>
-            </form>
+                <button md-icon-button title="Заполните все поля" [disabled]="timeStore.invalid || addressStore.invalid  || nameStore.invalid "
+                        type="submit">
+                                <md-icon>add_box</md-icon>
+                                <span>Добавить</span>
+                        </button>
+                </form>
         </div>
         <div class="row">
             <div class="col-md-8">
@@ -39,15 +40,17 @@
                     </md-card-title>
                     <md-card-subtitle>{{store.address}}</md-card-subtitle>
                     <span class="right-menu"></span>
-                    <button md-button [mdMenuTriggerFor]="menu">
-                            <md-icon>Меню</md-icon>
+                    <button md-icon-button [mdMenuTriggerFor]="menu">
+                            <md-icon>menu</md-icon>
                     </button>
                     <md-menu #menu="mdMenu">
                         <button md-menu-item (click)="edit(store.id)">
                                <span>Редактировать</span>
+                               <md-icon>create </md-icon>
                         </button>
                         <button md-menu-item (click)="delStore(store)">
-                              <span>Удалить</span>
+                             <span>Удалить</span>
+                             <md-icon>delete</md-icon>
                         </button>
                     </md-menu>
                     <hr>

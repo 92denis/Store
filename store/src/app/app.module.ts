@@ -9,7 +9,7 @@ import { DataService } from '././data.service';
 import { ProductComponent } from './product/product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule, MdButtonModule, MdInputModule, MdCardModule,MdMenuModule} from '@angular/material';
+import { MdToolbarModule, MdButtonModule, MdInputModule, MdCardModule,MdMenuModule,MdIconModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,7 +34,8 @@ const appRoutes: Routes = [
     MdButtonModule,
     MdInputModule,
     MdCardModule,
-    MdMenuModule
+    MdMenuModule,
+    MdIconModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

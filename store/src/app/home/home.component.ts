@@ -15,11 +15,13 @@ export class HomeComponent implements OnInit {
   address: string;
   time: string;
   stores: Store[];
-  selectedStore: Store;
+  lat: number;
+  lng: number;
+  newStore: Store;
   resultsMap: any; 
 
   constructor(private router: Router, private dataService: DataService) {
-
+    this.newStore = new Store(this.id, this.name, this.address, this.time,this.lat, this.lng);
   }
 
   getStores(): void {
@@ -30,11 +32,11 @@ export class HomeComponent implements OnInit {
     this.getStores();
   }
 
-  addItem(store: Store) {
-    store.lat = 50;
-    store.lng =7;
-    store.id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
-    this.dataService.addStore(store);
+  addItem() {
+    this.newStore.lat = 50;
+    this.newStore.lng =7;
+    this.newStore.id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
+    this.dataService.addStore(this.newStore);
   }
   delStore(store: Store) {
     this.dataService.deleteStore(store);

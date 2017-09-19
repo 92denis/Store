@@ -1,22 +1,22 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-            <form class="example-form" (ngSubmit)="addItem(store); storeForm.reset()" #storeForm="ngForm">
+            <form class="example-form" (ngSubmit)="addItem(); storeForm.reset()" #storeForm="ngForm">
                 <md-form-field class=" col-md-4 col-sm-4 col-xs-9">
-                    <input mdInput name="name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required>
+                    <input mdInput name="name" [(ngModel)]="newStore.name" placeholder="Название" #nameStore="ngModel" required>
                     <md-error>
                         Название <strong>обязательное</strong> для заполнения
                     </md-error>
                 </md-form-field>
 
                 <md-form-field class="col-md-4 col-sm-4 col-xs-9">
-                    <input mdInput name="address" [(ngModel)]="address" placeholder="Адрес" #addressStore="ngModel" required>
+                    <input mdInput name="address" [(ngModel)]="newStore.address" placeholder="Адрес" #addressStore="ngModel" required>
                     <md-error>
                         Адрес <strong>обязателен</strong> для заполнения
                     </md-error>
                 </md-form-field>
                 <md-form-field class="col-md-4 col-sm-4 col-xs-9">
-                    <input mdInput name="time" [(ngModel)]="time" placeholder="Режим работы" #timeStore="ngModel" required>
+                    <input mdInput name="time" [(ngModel)]="newStore.time" placeholder="Режим работы" #timeStore="ngModel" required>
                     <md-error>
                         Режим работы <strong>обязателен</strong> для заполнения
                     </md-error>

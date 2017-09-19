@@ -9,15 +9,12 @@ export class DataService {
     name: 'Windstorm',
     address: 'Minsk',
     time: '10:00 - 19:00',
-    lat: 51.678418,
-    lng: 7.809007
+  
   }, {
     id: 2,
     name: 'Wind',
     address: 'Minsk',
     time: '11:00 - 18:00',
-    lat: 42.48855,
-    lng: 8.865
   }];
 
   private products: Product[] = [{
@@ -39,7 +36,7 @@ export class DataService {
   }
 
   addStore(store: Store) {
-    this.stores.push(new Store(store.id, store.name, store.address,store.time, store.lat, store.lng));
+    this.stores.push(new Store(store.id, store.name, store.address,store.time));
   }
 
   deleteStore(store: Store) {

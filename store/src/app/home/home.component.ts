@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private router: Router, private dataService: DataService) {
-    this.newStore = new Store(0, null, null, null, 0, 0);
+    this.newStore = new Store(0, null, null, null);
   }
 
   getStores(): void {
@@ -30,8 +30,6 @@ export class HomeComponent implements OnInit {
   }
 
   addItem() {
-    this.newStore.lat = 50;
-    this.newStore.lng = 7;
     this.newStore.id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
     this.dataService.addStore(this.newStore);
   }

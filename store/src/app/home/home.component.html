@@ -56,6 +56,9 @@
                     </md-menu>
                     <hr>
                 </md-card-header>
+                <agm-map [zoom]="15" [latitude]="lat" [longitude]="lng">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
                 <!-- <img md-card-image src="assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
                 <md-card-content>
                     <p>

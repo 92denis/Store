@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   id: number;
   name: string;
   address: string;
   time: string;
   stores: Store[];
   selectedStore: Store;
+  resultsMap: any; 
 
   constructor(private router: Router, private dataService: DataService) {
 

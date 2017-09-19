@@ -3,6 +3,7 @@ import { Store } from '../store';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,17 +12,13 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
   id: number;
-  name: string;
-  address: string;
-  time: string;
   stores: Store[];
-  lat: number;
-  lng: number;
   newStore: Store;
-  resultsMap: any; 
+  resultsMap: any;
+
 
   constructor(private router: Router, private dataService: DataService) {
-    this.newStore = new Store(this.id, this.name, this.address, this.time,this.lat, this.lng);
+    this.newStore = new Store(0, null, null, null, 0, 0);
   }
 
   getStores(): void {
@@ -34,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   addItem() {
     this.newStore.lat = 50;
-    this.newStore.lng =7;
+    this.newStore.lng = 7;
     this.newStore.id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
     this.dataService.addStore(this.newStore);
   }

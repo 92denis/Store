@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-  lat: number = 51.678418;
-  lng: number = 7.809007;
   id: number;
   name: string;
   address: string;
@@ -32,9 +30,11 @@ export class HomeComponent implements OnInit {
     this.getStores();
   }
 
-  addItem(id: number, name: string, address: string, time: string) {
-    id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
-    this.dataService.addStore(id, name, address, time);
+  addItem(store: Store) {
+    store.lat = 50;
+    store.lng =7;
+    store.id = this.stores.length != 0 ? this.stores[this.stores.length - 1].id + 1 : 1;
+    this.dataService.addStore(store);
   }
   delStore(store: Store) {
     this.dataService.deleteStore(store);

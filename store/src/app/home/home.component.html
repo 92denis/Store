@@ -1,7 +1,7 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-            <form class="example-form" (ngSubmit)="addItem(id, name, address, time); storeForm.reset()" #storeForm="ngForm">
+            <form class="example-form" (ngSubmit)="addItem(store); storeForm.reset()" #storeForm="ngForm">
                 <md-form-field class=" col-md-4 col-sm-4 col-xs-9">
                     <input mdInput name="name" [(ngModel)]="name" placeholder="Название" #nameStore="ngModel" required>
                     <md-error>
@@ -56,8 +56,8 @@
                     </md-menu>
                     <hr>
                 </md-card-header>
-                <agm-map [zoom]="15" [latitude]="lat" [longitude]="lng">
-                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                <agm-map [zoom]="15" [latitude]=store.lat [longitude]=store.lng>
+                    <agm-marker [latitude]=store.lat [longitude]=store.lng></agm-marker>
                 </agm-map>
                 <!-- <img md-card-image src="assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
                 <md-card-content>

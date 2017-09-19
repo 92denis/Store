@@ -8,12 +8,16 @@ export class DataService {
     id: 1,
     name: 'Windstorm',
     address: 'Minsk',
-    time: '10:00 - 19:00'
+    time: '10:00 - 19:00',
+    lat: 51.678418,
+    lng: 7.809007
   }, {
     id: 2,
     name: 'Wind',
     address: 'Minsk',
-    time: '11:00 - 18:00'
+    time: '11:00 - 18:00',
+    lat: 42.48855,
+    lng: 8.865
   }];
 
   private products: Product[] = [{
@@ -34,8 +38,8 @@ export class DataService {
     this.products.push(new Product(storeId, id, name, price, count));
   }
 
-  addStore(id: number, name: string, address: string, time: string) {
-    this.stores.push(new Store(id, name, address, time));
+  addStore(store: Store) {
+    this.stores.push(new Store(store.id, store.name, store.address,store.time, store.lat, store.lng));
   }
 
   deleteStore(store: Store) {
@@ -57,7 +61,7 @@ export class DataService {
   getProductsByStoreId(storeId: number): Product[] {
     return this.products.filter(product => product.storeId === storeId);
   }
-  
+
   deleteProduct(product: Product) {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === product.id) {
@@ -73,5 +77,5 @@ export class DataService {
   getProduct(id: number): Promise<Product> {
     return this.getProducts().then(products => products.find(product => product.id === id));
   }
-  
+
 }

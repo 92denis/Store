@@ -56,10 +56,10 @@
                     </md-menu>
                     <hr>
                 </md-card-header>
-                <agm-map [zoom]="15" [latitude]=store.lat [longitude]=store.lng>
-                    <agm-marker [latitude]=store.lat [longitude]=store.lng></agm-marker>
-                </agm-map>
-                <!-- <img md-card-image src="assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                <ngui-map zoom="18" center={{store.address}} >
+                    <marker  position={{store.address}} ></marker>
+                </ngui-map>
+               
                 <md-card-content>
                     <p>
                         Режим работы: {{store.time}}

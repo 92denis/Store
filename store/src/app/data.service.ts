@@ -19,19 +19,19 @@ export class DataService {
 
   private products: Product[] = [{
     storeId: 1,
-    id: 0.1,
+    id: '_' + Math.random().toString(36).substr(2, 9),
     name: 'Стол',
     price: 125,
     count: 23
   }, {
     storeId: 2,
-    id: 0.9,
+    id: '_' + Math.random().toString(36).substr(2, 9),
     name: 'Стул',
     price: 342,
     count: 54
   }];
 
-  addProduct(storeId: number, id: number, name: string, price: number, count: number) {
+  addProduct(storeId: number, id: string, name: string, price: number, count: number) {
     this.products.push(new Product(storeId, id, name, price, count));
   }
 
@@ -71,7 +71,7 @@ export class DataService {
   getProducts(): Promise<Product[]> {
     return Promise.resolve(this.products);
   }
-  getProduct(id: number): Promise<Product> {
+  getProduct(id: string): Promise<Product> {
     return this.getProducts().then(products => products.find(product => product.id === id));
   }
 

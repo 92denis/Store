@@ -21,7 +21,7 @@ export class EditProductComponent implements OnInit {
   }
   ngOnInit(): void {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.dataService.getProduct(+params.get('id')))
+      .switchMap((params: ParamMap) => this.dataService.getProduct(params.get('id')))
       .subscribe(product => this.product = product);
   }
 

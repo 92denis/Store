@@ -1,7 +1,7 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-            <form class="example-form" (ngSubmit)="addItem(); storeForm.resetForm()" #storeForm ='ngForm'>
+            <form class="example-form" (ngSubmit)="addItem(); storeForm.resetForm()" #storeForm='ngForm'>
                 <md-form-field class=" col-md-4 col-sm-4 col-xs-9">
                     <input mdInput name="name" [(ngModel)]="newStore.name" placeholder="Название" #nameStore="ngModel" required>
                     <md-error>
@@ -34,8 +34,8 @@
                 <h2>Магазины</h2>
             </div>
         </div>
-        <div *ngFor="let store of stores">
-            <md-card class="example-card clearfix">
+        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let store of stores">
+            <md-card class="example-card clearfix ">
                 <md-card-header>
                     <md-card-title>{{store.name}}
                     </md-card-title>
@@ -56,10 +56,10 @@
                     </md-menu>
                     <hr>
                 </md-card-header>
-                <ngui-map zoom="18" center={{store.address}} >
-                    <marker  position={{store.address}} ></marker>
+                <ngui-map zoom="18" center={{store.address}}>
+                    <marker position={{store.address}}></marker>
                 </ngui-map>
-               
+
                 <md-card-content>
                     <p>
                         Режим работы: {{store.time}}

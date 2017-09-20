@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '../store';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { NgForm} from '@angular/forms';
 
 
 @Component({

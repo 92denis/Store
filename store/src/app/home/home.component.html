@@ -1,7 +1,7 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-            <form class="example-form" (ngSubmit)="addItem(); storeForm.reset()" #storeForm="ngForm">
+            <form class="example-form" (ngSubmit)="addItem(); storeForm.resetForm()" #storeForm ='ngForm'>
                 <md-form-field class=" col-md-4 col-sm-4 col-xs-9">
                     <input mdInput name="name" [(ngModel)]="newStore.name" placeholder="Название" #nameStore="ngModel" required>
                     <md-error>

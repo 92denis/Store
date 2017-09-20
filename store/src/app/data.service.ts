@@ -19,13 +19,13 @@ export class DataService {
 
   private products: Product[] = [{
     storeId: 1,
-    id: 1,
+    id: 0.1,
     name: 'Стол',
     price: 125,
     count: 23
   }, {
     storeId: 2,
-    id: 1,
+    id: 0.9,
     name: 'Стул',
     price: 342,
     count: 54

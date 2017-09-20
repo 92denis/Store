@@ -34,7 +34,6 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
-    console.log(this.storeId);
     this.route.paramMap
       .switchMap((params: ParamMap) => this.dataService.getProduct(+params.get('id')))
       .subscribe(product => this.product = product);
@@ -42,7 +41,7 @@ export class ProductComponent implements OnInit {
 
   addItem(storeId: number, id: number, name: string, price: number, count: number) {
     storeId = this.storeId;
-    id = this.products.length != 0 ? this.products[this.products.length - 1].id + 1 : 1;
+    id = this.products.length != 0 ? this.products[this.products.length - 1].id +  Math.random(): Math.random();
     this.dataService.addProduct(storeId, id, name, price, count);
     this.products = this.dataService.getProductsByStoreId(this.storeId);
   }
@@ -52,6 +51,7 @@ export class ProductComponent implements OnInit {
   }
   editProduct(id: number): void {
     this.router.navigate(['/edit-product', id]);
+    console.log(id);
   }
   goBack(): void {
     this.location.back();
